@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Prefeitura de Joaíma</title>
 
     <!-- CSS -->
@@ -11,140 +12,191 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <header class="top-header">
-        <div class="container d-flex justify-content-between align-items-center py-3">
-            <div class="logo d-flex align-items-center">
-                <img src="img/logo.png" alt="Logo Joaíma" style="height: 60px; margin-right: 10px;">
-                <div>
-                    <strong class="text-muted small">PREFEITURA MUNICIPAL DE</strong><br>
-                    <span class="joaima">Joaíma</span><br>
-                    <small class="text-danger">NOSSA GENTE, NOSSA FORÇA</small>
-                </div>
-            </div>
-            <div class="search-bar d-flex">
-                <input type="text" class="form-control" placeholder="O que você procura?">
-                <button class="btn btn-success ms-2">Buscar</button>
-            </div>
-            <div class="accessibility d-flex align-items-center">
-                <strong class="me-2">Acessibilidade:</strong>
-                <i class="fas fa-font me-2"></i>
-                <i class="fas fa-adjust me-2"></i>
-                <i class="fas fa-headphones"></i>
+
+    <!-- Top bar -->
+    <div class="top-bar d-flex justify-content-between align-items-center">
+        <div></div>
+        <div>Acessibilidade: <i class="bi bi-person-fill"></i></div>
+    </div>
+
+    <!-- Header com a logo e a barra de pesquisa -->
+    <header>
+        <div class="py-3 align-items-center" style="background-color: #eee;">
+            <div class="d-flex align-items-center px-4">
+                <a class="me-3news" href="index.html">
+                    <img src="img/logo_mobile.svg" alt="Logo Joaíma" class="logo me-5">
+                </a>
+                <form class="d-flex w-50" role="search">
+                    <input class="form-control me-2" type="search" placeholder="O que você procura?"
+                        aria-label="Buscar">
+                    <button class="btn btn-success" type="submit">Buscar</button>
+                </form>
             </div>
         </div>
-        <nav class="main-nav bg-success">
-            <div class="container d-flex py-2">
-                <a href="index.html" class="nav-link text-white">Home</a>
-                <span class="text-white px-2">|</span>
-                <a href="historia.html" class="nav-link text-white">História</a>
-                <span class="text-white px-2">|</span>
-                <a href="hidrografias.html" class="nav-link text-white">Hidrografias</a>
-                <span class="text-white px-2">|</span>
-                <a href="regioes.html" class="nav-link text-white">Regiões</a>
+
+        <!-- Barra de navegação (NavBar) -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand ps-3" href="index.html" style="font-size: 25px;">
+                <i class="bi bi-house-door"></i>
+                Home
+            </a>
+
+            <div class="container-fluid px-3">
+                <ul class="navbar-nav ms-auto fs-5">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Notícias</a></li>
+                    <span class="text-white px-2" style="font-size: 28px;">|</span>
+                    <li class="nav-item"><a class="nav-link text-white" href="historia.html">História</a></li>
+                    <span class="text-white px-2" style="font-size: 28px;">|</span>
+                    <li class="nav-item"><a class="nav-link text-white" href="hidrografias.html">Hidrografia</a></li>
+                    <span class="text-white px-2" style="font-size: 28px;">|</span>
+                    <li class="nav-item"><a class="nav-link text-white" href="regioes.html">Regiões</a></li>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <!-- Seção: Notícias & Eventos -->
-    <section class="noticias py-5">
-        <div class="container">
-            <h2 class="titulo"><span style="color: #3b82f6;">Notícias</span> & Eventos</h2>
-            <h5 class="subtitulo mt-3"><i class="fas fa-sparkles"></i> Destaques</h5>
 
-            <div class="row destaque mt-4">
-                <div class="col-md-6">
-                    <img src="img/arraia.jpg" class="img-fluid border rounded" alt="Arraiá da Nossa Gente">
+    <!-- Conteúdo principal da página -->
+    <div class="container">
+        <h4 class="section-title mt-4">Notícias & Eventos</h4>
+        <hr class="custom-separator">
+
+        <!-- Destaques -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="d-flex flex-row align-items-start destaque-box">
+                    <img src="img/Cultura.jpg" alt="Arraiá" class="img-destaque me-4 news-card">
+                    <div>
+                        <h1 class="fs-2">Vem aí o 1º Arraiá da Nossa Gente.</h1>
+                        <h1 class="fs-3">Você nem imagina o que estamos preparando... Atividades culturais, comidas
+                            típicas, shows e
+                            muito mais!</h1>
+                        <p class="fst-italic">A festa acontece nos dias 11 e 12 de julho, na nossa Praça de Eventos, e
+                            vai ser do jeitinho que o povo gosta:
+                            cheia de emoção, tradição e grandes atrações!</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h4>Vem aí o 1º Arraiá da Nossa Gente.</h4>
-                    <p class="lead">E você nem imagina o que estamos preparando...</p>
-                    <p class="text-muted">
-                        A festa acontece nos dias 11 e 12 de julho, na nossa Praça de Eventos, e vai ser do jeitinho que
-                        o povo gosta: cheia de emoção, tradição e grandes atrações!
-                    </p>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-3" style="padding-top: 50px;">
+
+            <div class="col">
+                <div class="card news-card">
+                    <img src="img/camara1.jpg" class="card-img-top" alt="Notícia">
+                    <div class="card-body">
+                        <p class="card-text">Câmara aprova novos projetos sociais para a cidade.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="row mt-4">
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <img src="img/card1.jpg" class="card-img-top" alt="Imagem evento">
-                        <div class="card-body">
-                            <p class="card-text small">Fiquem de olho em nossa programação e participe. Exercitar-se faz
-                                bem!</p>
-                            <span class="badge bg-success">Saúde</span>
+            <div class="col">
+                <div class="card news-card">
+                    <img src="img/saude (1).jpg" class="card-img-top" alt="Notícia">
+                    <div class="card-body">
+                        <p class="card-text">A Secretaria Municipal de Saúde de Joaíma firmou, nesta terça-feira
+                            (29/04), uma importante parceria com o CAPS Infantil de Jequitinhonha.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card news-card">
+                    <img src="img/social.jpg" class="card-img-top" alt="Notícia">
+                    <div class="card-body">
+                        <p class="card-text">Você que deseja se alistar venha fazer parte da Guarda Mirim, turma 2025.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="custom-separator">
+
+        <!-- Mais notícias -->
+        <h3 style="color: #757575; padding-top: 30px; padding-bottom: 20px;">
+            <i class="bi bi-journal-plus" style=" color: #65D2AE;"></i>
+            Mais notícias
+        </h3>
+
+        <hr class="custom-separator">
+
+        <!-- Seção: Sobre a Gestão -->
+        <section class="gestao py-5">
+            <div class="container">
+                <h4 class="section-title mt-5">Sobre a Gestão</h4>
+                <p><strong>Administração 2025 - 2028</strong></p>
+                <div class="row justify-content-center gap-4">
+
+                    <div class="col-md-5">
+                        <div class="card p-4 shadow d-flex flex-row align-items-center" style="min-height: 250px;">
+                            <div class="me-4">
+                                <p class="fs-5 mb-1">Abinaldo Oliveira Botelho</p>
+                                <small>Nascimento: 05/01/1970</small>
+                            </div>
+                            <img src="img/abinaldo.png" alt="Prefeito" class="rounded">
                         </div>
                     </div>
-                </div>
-                <!-- Repetir para outros cards -->
-            </div>
-        </div>
-    </section>
 
-    <!-- Seção: Mais Notícias -->
-    <section class="mais-noticias py-5 bg-light">
-        <div class="container">
-            <h4 class="mb-4"><i class="fas fa-newspaper"></i> Mais notícias</h4>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <img src="img/noticia1.jpg" class="img-fluid rounded" alt="">
-                    <p class="mt-2">Já começou o Ciclo de Avaliações CNCA para o ensino fundamental...</p>
-                    <p class="text-success">@educacaojoaima</p>
-                </div>
-                <!-- Repetir outros blocos -->
-            </div>
-            <div class="text-end mt-4">
-                <a href="#" class="text-success">Ver mais notícias <i class="fas fa-plus-circle"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção: Sobre a Gestão -->
-    <section class="gestao py-5">
-        <div class="container">
-            <h4><span style="color: #3b82f6;">Sobre</span> a Gestão</h4>
-            <p><strong>Administração 2025 - 2028</strong></p>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card p-3 shadow-sm">
-                        <p>Abinaldo Oliveira Botelho<br><small>Nascimento: 05/01/1970</small></p>
-                        <img src="img/abinaldo.jpg" alt="" class="img-fluid rounded">
+                    <div class="col-md-5">
+                        <div class="card p-4 shadow d-flex flex-row align-items-center" style="min-height: 250px;">
+                            <div class="me-4">
+                                <p class="fs-5 mb-1">Jussara Vieira Grapiuna</p>
+                                <small>Nascimento: 31/10/1952</small>
+                            </div>
+                            <img src="img/jussara.png" alt="Vice Prefeita" class="rounded">
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3 shadow-sm">
-                        <p>Jussara Vieira Grapiuna<br><small>Nascimento: 31/10/1952</small></p>
-                        <img src="img/jussara.jpg" alt="" class="img-fluid rounded">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Seção: Previsão do Tempo -->
-    <section class="clima py-5 bg-primary text-white">
-        <div class="container">
-            <h4>Previsão do Tempo</h4>
-            <div class="d-flex justify-content-between align-items-center mt-3 overflow-auto">
-                <div class="text-center mx-2">
-                    <p>Amanhã</p>
-                    <i class="fas fa-cloud fa-2x"></i>
-                    <p>21º | 16º</p>
                 </div>
-                <!-- Repetir para outros dias -->
             </div>
-        </div>
-    </section>
+        </section>
+
+
+        <!-- Seção: Previsão do Tempo -->
+        <section class="clima py-5 bg-primary text-white">
+            <div class="container">
+                <h4>Previsão do Tempo</h4>
+                <div class="d-flex justify-content-between align-items-center mt-3 overflow-auto clima-container">
+
+                    <div class="text-center mx-3 clima-dia">
+                        <p class="mb-1 fw-semibold">Amanhã</p>
+                        <i class="bi bi-cloud-sun-fill fs-2"></i>
+                        <p class="mb-0">21º | 16º</p>
+                    </div>
+
+                    <div class="text-center mx-3 clima-dia">
+                        <p class="mb-1 fw-semibold">Quinta</p>
+                        <i class="bi bi-sun fs-2"></i>
+                        <p class="mb-0">24º | 17º</p>
+                    </div>
+
+                    <div class="text-center mx-3 clima-dia">
+                        <p class="mb-1 fw-semibold">Sexta</p>
+                        <i class="bi bi-cloud-rain-fill fs-2"></i>
+                        <p class="mb-0">19º | 14º</p>
+                    </div>
+
+                    <div class="text-center mx-3 clima-dia">
+                        <p class="mb-1 fw-semibold">Sábado</p>
+                        <i class="bi bi-cloud-snow fs-2"></i>
+                        <p class="mb-0">18º | 13º</p>
+                    </div>
+
+                    <!-- Mais dias podem ser adicionados -->
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- Fechamento do container "main" Principal -->
 
     <!-- Rodapé -->
     <footer class="bg-success text-white py-4">
-        <div class="container d-flex justify-content-between align-items-start flex-wrap">
+        <div class=" container d-flex justify-content-between align-items-start flex-wrap">
             <div>
                 <h5 class="mb-0">Joaíma</h5>
                 <small>Nossa Gente, Nossa Força</small>
@@ -164,6 +216,12 @@
             </div>
         </div>
     </footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

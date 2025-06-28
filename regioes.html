@@ -11,42 +11,49 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <header class="top-header">
-        <div class="container d-flex justify-content-between align-items-center py-3">
-            <div class="logo d-flex align-items-center">
-                <img src="img/logo.png" alt="Logo Joaíma" style="height: 60px; margin-right: 10px;" />
-                <div>
-                    <strong class="text-muted small">PREFEITURA MUNICIPAL DE</strong><br />
-                    <span class="joaima">Joaíma</span><br />
-                    <small class="text-danger">NOSSA GENTE, NOSSA FORÇA</small>
-                </div>
-            </div>
-            <div class="search-bar d-flex">
-                <input type="text" class="form-control" placeholder="O que você procura?" />
-                <button class="btn btn-success ms-2">Buscar</button>
-            </div>
-            <div class="accessibility d-flex align-items-center">
-                <strong class="me-2">Acessibilidade:</strong>
-                <i class="fas fa-font me-2"></i>
-                <i class="fas fa-adjust me-2"></i>
-                <i class="fas fa-headphones"></i>
+    <!-- Top bar -->
+    <div class="top-bar d-flex justify-content-between align-items-center">
+        <div></div>
+        <div>Acessibilidade: <i class="bi bi-person-fill"></i></div>
+    </div>
+
+    <!-- Header com a logo e a barra de pesquisa -->
+    <header>
+        <div class="py-3 align-items-center" style="background-color: #eee;">
+            <div class="d-flex align-items-center px-4">
+                <a class="me-3news" href="index.html">
+                    <img src="img/logo_mobile.svg" alt="Logo Joaíma" class="logo me-5">
+                </a>
+                <form class="d-flex w-50" role="search">
+                    <input class="form-control me-2" type="search" placeholder="O que você procura?"
+                        aria-label="Buscar">
+                    <button class="btn btn-success" type="submit">Buscar</button>
+                </form>
             </div>
         </div>
-        <nav class="main-nav bg-success">
-            <div class="container d-flex py-2">
-                <a href="index.html" class="nav-link text-white">Home</a>
-                <span class="text-white px-2">|</span>
-                <a href="historia.html" class="nav-link text-white">História</a>
-                <span class="text-white px-2">|</span>
-                <a href="hidrografias.html" class="nav-link text-white">Hidrografias</a>
-                <span class="text-white px-2">|</span>
-                <a href="regioes.html" class="nav-link text-white">Regiões</a>
+
+        <!-- Barra de navegação (NavBar) -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand ps-3" href="index.html" style="font-size: 25px;">
+                <i class="bi bi-house-door"></i>
+                Home
+            </a>
+
+            <div class="container-fluid px-3">
+                <ul class="navbar-nav ms-auto fs-5">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Notícias</a></li>
+                    <span class="text-white px-2" style="font-size: 28px;">|</span>
+                    <li class="nav-item"><a class="nav-link text-white" href="historia.html">História</a></li>
+                    <span class="text-white px-2" style="font-size: 28px;">|</span>
+                    <li class="nav-item"><a class="nav-link text-white" href="hidrografias.html">Hidrografia</a></li>
+                    <span class="text-white px-2" style="font-size: 28px;">|</span>
+                    <li class="nav-item"><a class="nav-link text-white" href="regioes.html">Regiões</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -62,15 +69,18 @@
                 área de 377,13 km², ou seja, 22,64% do território, a lei de criação do distrito é a Lei Estadual Nº
                 8.285 de 8/10/1982.</p>
 
-            <div class="row my-4">
-                <div class="col-md-4 mb-3">
-                    <img src="img/giru1.png" alt="Distrito de Giru 1" class="img-fluid rounded border" />
+            <div class="my-4">
+                <div class="mb-3">
+                    <img src="img/giru1.png" alt="Distrito de Giru 1" class="img-fluid rounded border mx-auto d-block"
+                        style="max-width: 60%;" />
                 </div>
-                <div class="col-md-4 mb-3">
-                    <img src="img/giru2.png" alt="Distrito de Giru 2" class="img-fluid rounded border" />
+                <div class="mb-3">
+                    <img src="img/giru2.png" alt="Distrito de Giru 2" class="img-fluid rounded border mx-auto d-block"
+                        style="max-width: 60%;" />
                 </div>
-                <div class="col-md-4 mb-3">
-                    <img src="img/giru3.png" alt="Distrito de Giru 3" class="img-fluid rounded border" />
+                <div class="mb-3">
+                    <img src="img/giru3.png" alt="Distrito de Giru 3" class="img-fluid rounded border mx-auto d-block"
+                        style="max-width: 60%;" />
                 </div>
             </div>
 
@@ -97,15 +107,14 @@
             <!-- Comunidade Barreirinho -->
             <h3 class="mt-5">Comunidade Barreirinho</h3>
 
-            <div class="row my-4">
-                <div class="col-md-6 mb-3">
-                    <img src="img/barreirinho1.png" alt="Comunidade Barreirinho 1" class="img-fluid rounded border" />
+            <div class="my-4">
+                <div class="mb-3">
+                    <img src="img/barreirinho1.png" alt="Comunidade Barreirinho 1"
+                        class="img-fluid rounded border mx-auto d-block" style="max-width: 70%;" />
                 </div>
-                <div class="col-md-6 mb-3">
-                    <img src="img/barreirinho2.png" alt="Comunidade Barreirinho 2" class="img-fluid rounded border" />
-                </div>
-                <div class="col-md-6 mb-3">
-                    <img src="img/barreirinho3.jpg" alt="Comunidade Barreirinho 3" class="img-fluid rounded border" />
+                <div class="mb-3">
+                    <img src="img/barreirinho2.png" alt="Comunidade Barreirinho 2"
+                        class="img-fluid rounded border mx-auto d-block" style="max-width: 70%;" />
                 </div>
             </div>
 

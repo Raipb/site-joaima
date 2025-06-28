@@ -1,134 +1,243 @@
-/* Reset básico */
+/* RESET GERAL */
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Body */
+/* TIPOGRAFIA & BODY */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+    font-family: 'Inter', Arial, sans-serif;
 }
 
-/* Top header */
-.top-header {
-  background-color: #eaeaea;
-  border-bottom: 1px solid #ccc;
+/* CONTAINERS E LAYOUT */
+.container {
+    max-width: 960px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
-.logo .joaima {
-  color: #009444;
-  font-size: 24px;
-  font-weight: bold;
+@media (max-width: 768px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
-.logo small {
-  font-size: 12px;
-  color: #dc3545; /* vermelho bootstrap para a slogan */
+.container-fluid {
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
-/* Barra de acessibilidade */
-.accessibility {
-  font-size: 14px;
-  color: #555;
+.top-bar {
+    background: #eee;
+    font-size: 0.9rem;
+    padding: 5px 15px;
+    border-bottom: 1px solid #ccc;
 }
 
-.accessibility i {
-  font-size: 18px;
-  cursor: pointer;
-  margin-right: 10px;
-  transition: color 0.3s ease;
+/* LOGO */
+.logo {
+    height: 80px;
 }
 
-.accessibility i:hover {
-  color: #009444;
+/* SEÇÃO DESTAQUES */
+
+/* Torna destaque-box um flex container para alinhar imagem e texto lado a lado */
+.destaque-box {
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    /* adiciona flexbox */
+    flex-direction: row;
+    /* padrão: imagem e texto lado a lado */
+    align-items: flex-start;
+    gap: 20px;
+    /* espaço entre imagem e texto */
+    color: #333;
 }
 
-/* Navegação principal */
-.main-nav {
-  background-color: #009444;
-  border-top: 3px solid #007a33;
+/* Imagem do destaque com largura limitada, altura automática */
+.img-destaque {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
-.main-nav a {
-  text-decoration: none;
-  font-size: 16px;
-  color: #fff;
-  padding: 0 10px;
-  transition: color 0.3s ease;
+/* Ajustes para telas menores que 768px */
+@media (max-width: 768px) {
+
+    /* Muda destaque-box para coluna no celular (imagem em cima, texto abaixo) */
+    .destaque-box {
+        flex-direction: column !important;
+    }
+
+    /* Imagem ocupa 100% da largura do container no celular */
+    .img-destaque {
+        max-width: 100%;
+        margin-bottom: 15px;
+        margin-right: 0 !important;
+    }
 }
 
-.main-nav a:hover {
-  color: #d4d4d4;
+.destaque-box p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 15px;
+    text-align: justify;
 }
 
-/* Seções principais */
-section {
-  padding: 40px 0;
-  background-color: white;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+/* CARDS DE NOTÍCIAS */
+.news-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    border-radius: 8px;
+    background-color: #fff;
 }
 
-section h2, section h3, section h4 {
-  color: #009444;
-  margin-bottom: 20px;
-  font-weight: 700;
+.news-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(90, 110, 131, 0.5);
+    filter: brightness(1.05);
 }
 
-/* Imagens responsivas com borda */
-img.img-fluid {
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  transition: transform 0.3s ease;
+.news-card img {
+    max-height: 350px;
+    object-fit: cover;
 }
 
-img.img-fluid:hover {
-  transform: scale(1.05);
+.card-text {
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
-/* Textos */
-p {
-  line-height: 1.6;
-  font-size: 16px;
-  color: #444;
+/* TÍTULOS & SEPARADORES */
+.section-title {
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 30px;
+    font-size: 35px;
 }
 
-/* Rodapé */
+h4 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: red;
+}
+
+.custom-separator {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    margin: 20px 30px 10px 30px;
+}
+
+/* RODAPÉ */
 footer {
-  background-color: #009444;
-  color: white;
-  padding: 30px 0;
-  font-size: 14px;
+    background-color: #009444;
+    color: white;
+    padding: 30px 0;
+    font-size: 18px;
 }
 
-footer h5, footer h6 {
-  margin-bottom: 10px;
+footer small {
+    color: red;
+    font-size: 18px;
+}
+
+footer h5,
+footer h6 {
+    margin-bottom: 10px;
 }
 
 footer i {
-  font-size: 20px;
-  margin-right: 15px;
-  cursor: pointer;
-  transition: color 0.3s ease;
+    font-size: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 footer i:hover {
-  color: #d4d4d4;
+    color: #d4d4d4;
 }
 
-/* Layout flexível no rodapé para dispositivos menores */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .top-header .container,
-  .main-nav .container,
-  footer .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  footer .container > div {
-    margin-bottom: 20px;
-  }
+    .top-header .container,
+    .main-nav .container,
+    footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer .container>div {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* clima */
+.clima-container {
+    gap: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff55 transparent;
+}
+
+.clima-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.clima-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff55;
+    border-radius: 4px;
+}
+
+.clima-dia {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    /* bordas arredondadas */
+    padding: 15px 20px;
+    min-width: 100px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+}
+
+.clima-dia:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.clima-dia p {
+    margin: 0;
+    color: white;
+}
+
+.clima-dia i {
+    color: #fff;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .clima-container {
+        justify-content: start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
 }
