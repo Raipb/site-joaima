@@ -11,19 +11,6 @@ body {
 }
 
 /* CONTAINERS E LAYOUT */
-.container {
-    max-width: 960px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
 .container-fluid {
     padding-left: 80px;
     padding-right: 80px;
@@ -36,9 +23,23 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
+.navbar {
+    min-height: 48px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Aplicando a altura fixa só quando o NavBar não estiver colapsado */
+@media (min-width: 992px) {
+    .navbar {
+        height: 48px;
+    }
+}
+
 /* LOGO */
 .logo {
-    height: 80px;
+    height: 60px;
+    width: auto;
 }
 
 /* SEÇÃO DESTAQUES */
@@ -47,45 +48,23 @@ body {
 .destaque-box {
     padding: 5px;
     border-radius: 10px;
-    display: flex;
-    /* adiciona flexbox */
-    flex-direction: row;
-    /* padrão: imagem e texto lado a lado */
-    align-items: flex-start;
-    gap: 20px;
-    /* espaço entre imagem e texto */
-    color: #333;
 }
 
-/* Imagem do destaque com largura limitada, altura automática */
 .img-destaque {
     width: 100%;
     max-width: 600px;
-    height: auto;
+    flex-shrink: 0;
+    aspect-ratio: 600 / 350;
     border-radius: 8px;
     object-fit: cover;
     flex-shrink: 0;
-}
-
-/* Ajustes para telas menores que 768px */
-@media (max-width: 768px) {
-
-    /* Muda destaque-box para coluna no celular (imagem em cima, texto abaixo) */
-    .destaque-box {
-        flex-direction: column !important;
-    }
-
-    /* Imagem ocupa 100% da largura do container no celular */
-    .img-destaque {
-        max-width: 100%;
-        margin-bottom: 15px;
-        margin-right: 0 !important;
-    }
+    margin-bottom: 1rem;
 }
 
 .destaque-box p {
     font-size: 20px;
     line-height: 1.6;
+    color: #333;
     margin-top: 15px;
     text-align: justify;
 }
@@ -104,16 +83,16 @@ body {
 }
 
 .news-card img {
-    max-height: 350px;
+    max-height: 200px;
     object-fit: cover;
 }
 
 .card-text {
-    max-height: 80px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-height: 80px; /* controla a altura visível do texto */
+    overflow: hidden; /* esconde o que passar da altura */
+    text-overflow: ellipsis; /* adiciona "..." se quiser (só funciona em linha única) */
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2; /* mostra só 3 linhas */
     -webkit-box-orient: vertical;
 }
 
@@ -127,8 +106,8 @@ body {
 
 h4 {
     position: relative;
-    display: inline-block;
-    padding-bottom: 6px;
+    display: inline-block; /* para a linha se alinhar ao texto */
+    padding-bottom: 6px; /* espaço entre texto e linha */
 }
 
 h4::after {
@@ -136,15 +115,15 @@ h4::after {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
-    height: 3px;
+    width: 60px; /* tamanho da linha: só início */
+    height: 3px; /* espessura da linha */
     background-color: red;
 }
 
 .custom-separator {
-    border: none;
-    border-bottom: 2px solid #ccc;
-    margin: 20px 30px 10px 30px;
+    border: none; /* tira borda padrão */
+    border-bottom: 2px solid #ccc; /* linha fina */
+    margin: 20px 30px 10px 30px; /* margem vertical e horizontal */
 }
 
 /* RODAPÉ */
@@ -152,12 +131,7 @@ footer {
     background-color: #009444;
     color: white;
     padding: 30px 0;
-    font-size: 18px;
-}
-
-footer small {
-    color: red;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 footer h5,
@@ -176,18 +150,43 @@ footer i:hover {
     color: #d4d4d4;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap; /* garante que fique em linha */
+    gap: 2rem;
+}
 
-    .top-header .container,
-    .main-nav .container,
+/* RESPONSIVIDADE */
+/* Layout flexível no rodapé para dispositivos menores */
+@media (max-width: 768px) {
     footer .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 12px;
     }
 
-    footer .container>div {
-        margin-bottom: 20px;
+    footer h5,
+    footer h6 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    footer p,
+    footer small {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    footer i {
+        font-size: 16px;
+        margin-right: 8px;
+    }
+
+    footer .container > div {
+        min-width: 30%;
     }
 }
 
