@@ -88,11 +88,15 @@ body {
 }
 
 .card-text {
-    max-height: 80px; /* controla a altura visível do texto */
-    overflow: hidden; /* esconde o que passar da altura */
-    text-overflow: ellipsis; /* adiciona "..." se quiser (só funciona em linha única) */
+    max-height: 80px;
+    /* controla a altura visível do texto */
+    overflow: hidden;
+    /* esconde o que passar da altura */
+    text-overflow: ellipsis;
+    /* adiciona "..." se quiser (só funciona em linha única) */
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* mostra só 3 linhas */
+    -webkit-line-clamp: 2;
+    /* mostra só 3 linhas */
     -webkit-box-orient: vertical;
 }
 
@@ -106,8 +110,10 @@ body {
 
 h4 {
     position: relative;
-    display: inline-block; /* para a linha se alinhar ao texto */
-    padding-bottom: 6px; /* espaço entre texto e linha */
+    display: inline-block;
+    /* para a linha se alinhar ao texto */
+    padding-bottom: 6px;
+    /* espaço entre texto e linha */
 }
 
 h4::after {
@@ -115,15 +121,20 @@ h4::after {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px; /* tamanho da linha: só início */
-    height: 3px; /* espessura da linha */
+    width: 60px;
+    /* tamanho da linha: só início */
+    height: 3px;
+    /* espessura da linha */
     background-color: red;
 }
 
 .custom-separator {
-    border: none; /* tira borda padrão */
-    border-bottom: 2px solid #ccc; /* linha fina */
-    margin: 20px 30px 10px 30px; /* margem vertical e horizontal */
+    border: none;
+    /* tira borda padrão */
+    border-bottom: 2px solid #ccc;
+    /* linha fina */
+    margin: 20px 30px 10px 30px;
+    /* margem vertical e horizontal */
 }
 
 /* RODAPÉ */
@@ -154,7 +165,8 @@ footer i:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: nowrap; /* garante que fique em linha */
+    flex-wrap: nowrap;
+    /* garante que fique em linha */
     gap: 2rem;
 }
 
@@ -185,58 +197,71 @@ footer i:hover {
         margin-right: 8px;
     }
 
-    footer .container > div {
+    footer .container>div {
         min-width: 30%;
     }
 }
 
 
 /* clima */
-.clima-container {
-    gap: 1.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: #ffffff55 transparent;
-}
-
-.clima-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.clima-container::-webkit-scrollbar-thumb {
-    background-color: #ffffff55;
-    border-radius: 4px;
-}
-
-.clima-dia {
-    background-color: rgba(255, 255, 255, 0.2);
+.weather-widget {
+    background-color: #80bfff;
     border-radius: 15px;
-    /* bordas arredondadas */
-    padding: 15px 20px;
-    min-width: 100px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.forecast-day {
+    flex: 0 0 auto;
+    width: 120px;
     text-align: center;
-    flex-shrink: 0;
-    transition: background-color 0.3s ease;
-}
-
-.clima-dia:hover {
-    background-color: rgba(255, 255, 255, 0.35);
-}
-
-.clima-dia p {
-    margin: 0;
     color: white;
 }
 
-.clima-dia i {
-    color: #fff;
-    font-size: 2rem;
+.forecast-day .day {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
-@media (max-width: 768px) {
-    .clima-container {
-        justify-content: start;
-        overflow-x: auto;
-        padding-bottom: 1rem;
+.forecast-day .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-day .temp {
+    font-size: 1rem;
+}
+
+.arrow {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 576px) {
+    .forecast-day {
+        width: 100px;
+    }
+
+    .forecast-day .icon {
+        font-size: 1.5rem;
+    }
+
+    .forecast-day .temp {
+        font-size: 0.9rem;
     }
 }

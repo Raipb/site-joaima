@@ -31,7 +31,7 @@
 
 <body>
 
-     <!-- Top bar -->
+    <!-- Top bar -->
     <div class="top-bar d-flex justify-content-between align-items-center">
         <div></div>
         <div>Acessibilidade:<i class="bi bi-person-fill"></i></div>
@@ -137,7 +137,7 @@
         <hr class="custom-separator">
 
         <!-- Mais notícias -->
-        <h3 style="color: #757575; padding-top: 30px; padding-bottom: 20px;">
+        <h3 style="color: #757575; padding-top: 30px; padding-bottom: 10px;">
             <i class="bi bi-journal-plus" style=" color: #65D2AE;"></i>
             Mais notícias
         </h3>
@@ -145,7 +145,7 @@
         <hr class="custom-separator">
 
         <!-- Seção: Sobre a Gestão -->
-        <section class="gestao py-5">
+        <section class="gestao">
             <div class="container">
                 <h4 class="section-title mt-5">Sobre a Gestão</h4>
                 <p><strong>Administração 2025 - 2028</strong></p>
@@ -176,44 +176,52 @@
         </section>
 
 
-        <!-- Seção: Previsão do Tempo -->
-        <section class="clima py-5 bg-primary text-white">
-            <div class="container">
-                <h4>Previsão do Tempo</h4>
-                <div class="d-flex justify-content-between align-items-center mt-3 overflow-auto clima-container">
+        <section class="clima py-5">
 
-                    <div class="text-center mx-3 clima-dia">
-                        <p class="mb-1 fw-semibold">Amanhã</p>
-                        <i class="bi bi-cloud-sun-fill fs-2"></i>
-                        <p class="mb-0">21º | 16º</p>
+            <div class="container my-4">
+                <h5 class="text-primary fw-bold mb-3">Previsão do Tempo</h5>
+
+                <div class="d-flex weather-widget">
+                    <div class="arrow me-3"><i class="bi bi-arrow-left"></i></div>
+
+                    <div class="forecast-day">
+                        <div class="day">Hoje</div>
+                        <div class="icon"><i class="bi bi-cloud-fill"></i></div>
+                        <div class="temp">21° <small>16°</small></div>
                     </div>
 
-                    <div class="text-center mx-3 clima-dia">
-                        <p class="mb-1 fw-semibold">Quinta</p>
-                        <i class="bi bi-sun fs-2"></i>
-                        <p class="mb-0">24º | 17º</p>
+                    <div class="forecast-day">
+                        <div class="day">Terça-Feira</div>
+                        <div class="icon" style="color: yellow;"><i class="bi bi-sun-fill"></i></div>
+                        <div class="temp">28° <small>20°</small></div>
                     </div>
 
-                    <div class="text-center mx-3 clima-dia">
-                        <p class="mb-1 fw-semibold">Sexta</p>
-                        <i class="bi bi-cloud-rain-fill fs-2"></i>
-                        <p class="mb-0">19º | 14º</p>
+                    <div class="forecast-day">
+                        <div class="day">Quarta-feira</div>
+                        <div class="icon"><i class="bi bi-clouds-fill"></i></div>
+                        <div class="temp">25° <small>21°</small></div>
                     </div>
 
-                    <div class="text-center mx-3 clima-dia">
-                        <p class="mb-1 fw-semibold">Sábado</p>
-                        <i class="bi bi-cloud-snow fs-2"></i>
-                        <p class="mb-0">18º | 13º</p>
+                    <div class="forecast-day">
+                        <div class="day">Quinta-feira</div>
+                        <div class="icon"><i class="bi bi-cloud-lightning-rain-fill"></i></div>
+                        <div class="temp">20° <small>14°</small></div>
                     </div>
 
-                    <!-- Mais dias podem ser adicionados -->
+                    <div class="forecast-day">
+                        <div class="day">Sexta-Feira</div>
+                        <div class="icon"><i class="bi bi-cloud-sun-fill"></i></div>
+                        <div class="temp">24° <small>18°</small></div>
+                    </div>
+
+                    <div class="arrow ms-3"><i class="bi bi-arrow-right"></i></div>
                 </div>
             </div>
         </section>
 
     </div> <!-- Fechamento do container "main" Principal -->
 
-     <!-- Rodapé -->
+    <!-- Rodapé -->
     <footer class="bg-success text-white py-4">
         <div class=" container footer-flex">
             <div>
